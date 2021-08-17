@@ -4,8 +4,14 @@
             ).then(function(response){
                 response.json().then( function(astronauts){
                     console.log(astronauts);
+
+                    astronauts.sort( (a1, a2) => a1.hoursInSpace - a2.hoursInSpace);
+
+                    console.log(astronauts);
+                    
                     const Astro = document.getElementById("container");
                     let index = 0;    
+
                     astronauts.forEach(astronaut => Astro.innerHTML +=`<div class="astronaut">
                 <div class="astronaut"> 
                     <div class="bio">
